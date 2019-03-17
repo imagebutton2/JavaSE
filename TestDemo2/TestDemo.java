@@ -1,10 +1,8 @@
-
 //Lambda表达式方法引用
-//1.引用静态方法
-
-interface IUi<R，P>{
-     R Ivalueof(P p);
-  
+//2.引用对象方法
+interface IUi<P>{
+     P ItoUpperCase();
+   
 }
 class Person{
     private String name ;
@@ -47,10 +45,11 @@ class Person{
 public class TestDemo {
 
     public static void main(String[] args) {
-       // public static String valueOf(Object obj)
-	   //引用静态方法
-		IUi <Integer,String>iUi=String::valueOf;
-        System.out.println(iUi.Ivalueof(10));
+      
+	 //引用对象方法 public String toUpperCase()
+      IUi<String>iUi= "hello"::toUpperCase;
+      System.out.println(iUi.ItoUpperCase());
 
+        
     }
 }
